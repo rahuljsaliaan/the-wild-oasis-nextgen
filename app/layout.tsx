@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Navigation from "@/app/_components/Navigation";
 import Logo from "@/app/_components/Logo";
 
+import "@/app/_styles/globals.css";
+
 export const metadata: Metadata = {
   title: "The Wild Oasis",
 };
@@ -13,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-primary-950 text-primary-100 min-h-screen">
         <header>
           <Logo />
           <Navigation />
