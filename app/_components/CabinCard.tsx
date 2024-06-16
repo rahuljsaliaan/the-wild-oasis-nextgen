@@ -1,14 +1,6 @@
 import { UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-
-interface Cabin {
-  id: string;
-  name: string;
-  maxCapacity: number;
-  regularPrice: number;
-  discount: number;
-  image: string;
-}
+import { Cabin } from "@/app/_types/dtos";
 
 type CabinCardProps = {
   cabin: Cabin;

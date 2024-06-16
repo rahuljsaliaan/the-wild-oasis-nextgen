@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navigation from "./components/Navigation";
-import Logo from "./components/Logo";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navigation from "@/app/_components/Navigation";
+import Logo from "@/app/_components/Logo";
 
 export const metadata: Metadata = {
   title: "The Wild Oasis",
@@ -17,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <header>
           <Logo />
           <Navigation />
