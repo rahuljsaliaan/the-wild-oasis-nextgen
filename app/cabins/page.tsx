@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 export interface User {
   id: string;
   name: string;
 }
+
+export const metadata: Metadata = {
+  title: "Cabins",
+};
 
 export default async function Page() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
