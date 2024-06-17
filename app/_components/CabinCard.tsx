@@ -1,6 +1,6 @@
 import { UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import { Cabin } from "@/app/_types/dtos";
+import { Cabin } from "@/app/_types/model.types";
 
 type CabinCardProps = {
   cabin: Cabin;

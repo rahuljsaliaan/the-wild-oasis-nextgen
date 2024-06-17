@@ -1,5 +1,5 @@
 import CabinCard from "@/app/_components/CabinCard";
-import { Cabin } from "@/app/_types/dtos";
+import { Cabin } from "@/app/_types/model.types";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,5 +1,5 @@
 import ReservationCard from "@/app/_components/ReservationCard";
-import { Booking } from "@/app/_types/dtos";
+import { Booking } from "@/app/_types/model.types";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,5 +1,5 @@
 import { eachDayOfInterval } from "date-fns";
-import { Booking, Guest } from "@/app/_types/model.types";
+import { Booking, Guest } from "@/app/_types/model.typess";
 import supabase from "./supabase";
 
 /////////////
