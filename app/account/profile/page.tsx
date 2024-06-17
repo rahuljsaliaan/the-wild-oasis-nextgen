@@ -1,6 +1,10 @@
 import SelectCountry from "@/app/_components/SelectCountry";
+import { Metadata } from "next";
 import Image from "next/image";
-// import countryFlag from "@/public/"
+
+export const metadata: Metadata = {
+  title: "Update Profile",
+};
 
 export default function Page() {
   // CHANGE
