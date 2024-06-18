@@ -1,25 +1,28 @@
-import { getCabinPrice } from "@/app/_lib/data-service";
+import { getCabinPrice } from "@/app/_lib/services/data-service";
 
 type PriceProps = {
   cabinId: string;
 };
 
 async function Price({ cabinId }: PriceProps) {
-  const { regularPrice, discount } = await getCabinPrice(cabinId);
+  const cabin = await getCabinPrice(cabinId)!;
 
   return (
     <p className="mt-12 text-3xl flex gap-3 items-baseline">
-      {discount > 0 ? (
+      {cabin?.discount && cabin?.discount > 0 ? (
         <>
           <span className="text-3xl font-[350]">
-            ${regularPrice - discount}
+            $
+            {cabin?.regularPrice &&
+              cabin.discount &&
+              cabin?.regularPrice - cabin?.discount}
           </span>
           <span className="line-through font-semibold text-primary-600">
-            ${regularPrice}
+            ${cabin?.regularPrice}
           </span>
         </>
       ) : (
-        <span className="text-3xl font-[350]">${regularPrice}</span>
+        <span className="text-3xl font-[350]">${cabin?.regularPrice}</span>
       )}
       <span className="text-primary-200">/ night</span>
     </p>
