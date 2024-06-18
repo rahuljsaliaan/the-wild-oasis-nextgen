@@ -1,4 +1,5 @@
 import { Tables } from "../supabase/database.types";
+import { PartialProperties } from "./utilities.types";
 
 export enum Status {
   UNCONFIRMED = "unconfirmed",
@@ -10,10 +11,7 @@ export type Booking = Tables<"bookings">;
 
 export type Guest = Tables<"guests">;
 
-export type Cabin = PartialFields<
-  Tables<"cabins">,
-  "created_at" | "description"
->;
+export type Cabin = Tables<"cabins">;
 
 export type Settings = Tables<"settings">;
 
