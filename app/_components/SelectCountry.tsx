@@ -1,4 +1,4 @@
-import { getCountries } from "@/app/_lib/supabase/data-service";
+import { getCountries } from "@/app/_lib/services/data-service";
 
 // Let's imagine your colleague already built this component 😃
 
