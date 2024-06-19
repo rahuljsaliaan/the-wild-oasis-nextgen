@@ -13,15 +13,14 @@ export const generateMetadata: GenerateMetadataFunc<{
 }> = async ({ params }) => {
   const cabin = await getCabin(parseInt(params.cabinId));
 
-  if (!cabin?.name) return;
-
-  return { title: `Cabin ${cabin.name}` };
+  return { title: `Cabin ${cabin?.name}` };
 };
 
 export default async function Page({ params }: CabinPageProps) {
   const cabin = await getCabin(parseInt(params.cabinId));
 
-  if (!cabin) return null;
+  if (!cabin?.name)
+    throw new Error(`Cabin with id "${params.cabinId}" not found`);
 
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
