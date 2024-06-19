@@ -1,6 +1,7 @@
 import { eachDayOfInterval } from "date-fns";
 import { Booking, Country, Guest } from "@/app/_lib/types/models.types";
 import supabase from "../supabase/supabase";
+import { notFound } from "next/navigation";
 
 /////////////
 // GET
@@ -31,6 +32,7 @@ export async function getCabinPrice(id: number) {
 
   if (error) {
     console.error(error);
+    notFound();
   }
 
   return data;

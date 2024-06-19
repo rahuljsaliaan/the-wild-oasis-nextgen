@@ -5,6 +5,7 @@ import {
 } from "@/app/_lib/types/utilities.types";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 type CabinPageProps = DynamicRouteParam<{ cabinId: string }>;
 
@@ -19,8 +20,7 @@ export const generateMetadata: GenerateMetadataFunc<{
 export default async function Page({ params }: CabinPageProps) {
   const cabin = await getCabin(parseInt(params.cabinId));
 
-  if (!cabin?.name)
-    throw new Error(`Cabin with id "${params.cabinId}" not found`);
+  if (!cabin?.name) notFound();
 
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
