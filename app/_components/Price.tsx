@@ -1,7 +1,7 @@
 import { getCabinPrice } from "@/app/_lib/services/data-service";
 
 type PriceProps = {
-  cabinId: string;
+  cabinId: number;
 };
 
 async function Price({ cabinId }: PriceProps) {
