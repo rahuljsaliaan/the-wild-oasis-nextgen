@@ -1,5 +1,4 @@
 import { getCabin, getCabins } from "@/app/_lib/services/data-service";
-import { Cabin } from "@/app/_lib/types/models.types";
 import {
   DynamicRouteParam,
   GenerateMetadataFunc,
