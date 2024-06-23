@@ -1,7 +1,9 @@
-import { getCabin } from "@/app/_lib/services/data-service";
+import { getCabin, getCabins } from "@/app/_lib/services/data-service";
+import { Cabin } from "@/app/_lib/types/models.types";
 import {
   DynamicRouteParam,
   GenerateMetadataFunc,
+  GenerateStaticParamsFunc,
 } from "@/app/_lib/types/utilities.types";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
@@ -15,6 +17,20 @@ export const generateMetadata: GenerateMetadataFunc<{
   const cabin = await getCabin(parseInt(params.cabinId));
 
   return { title: `Cabin ${cabin?.name}` };
+};
+
+export const generateStaticParams: GenerateStaticParamsFunc<{
+  cabinId: string;
+}> = async () => {
+  const cabins = await getCabins();
+
+  const cabinIds: { cabinId: string }[] = [];
+
+  if (cabins.length) {
+    cabinIds.push(...cabins.map((cabin) => ({ cabinId: String(cabin.id) })));
+  }
+
+  return cabinIds;
 };
 
 export default async function Page({ params }: CabinPageProps) {

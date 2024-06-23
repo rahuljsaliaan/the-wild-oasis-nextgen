@@ -6,8 +6,15 @@ export type NonNullableProperties<T> = {
   [P in keyof T]-?: NonNullable<T[P]>;
 };
 
+export type AllStringProps<T> = {
+  [P in keyof T]: string | string[];
+};
+
 export type DynamicRouteParam<T extends Object> = { params: T };
 
 export type GenerateMetadataFunc<T extends Object> = (
   params: DynamicRouteParam<T>
 ) => Promise<{ [key: string]: any } | void>;
+
+export type GenerateStaticParamsFunc<T extends AllStringProps<T>> =
+  () => Promise<Array<T>>;
