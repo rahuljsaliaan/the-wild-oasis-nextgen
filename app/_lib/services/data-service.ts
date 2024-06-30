@@ -1,6 +1,6 @@
 import { eachDayOfInterval } from "date-fns";
 import { Booking, Country, Guest } from "@/app/_lib/types/models.types";
-import supabase from "../supabase/supabase";
+import supabase from "@/app/_lib/supabase/supabase";
 import { notFound } from "next/navigation";
 
 /////////////

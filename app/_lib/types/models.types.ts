@@ -1,5 +1,4 @@
-import { Tables } from "../supabase/database.types";
-import { PartialProperties } from "./utilities.types";
+import { Tables } from "@/app/_lib/supabase/database.types";
 
 export enum Status {
   UNCONFIRMED = "unconfirmed",

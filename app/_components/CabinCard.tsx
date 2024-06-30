@@ -2,7 +2,7 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { Cabin } from "@/app/_lib/types/models.types";
 import Link from "next/link";
-import { PartialProperties } from "../_lib/types/utilities.types";
+import { PartialProperties } from "@/app/_lib/types/utilities.types";
 
 type CabinCardProps = {
   cabin: PartialProperties<Cabin>;
