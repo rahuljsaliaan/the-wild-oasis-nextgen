@@ -1,7 +1,11 @@
+// import { unstable_noStore as noStore } from "next/cache";
 import { getCabins } from "@/app/_lib/services/data-service";
 import CabinCard from "@/app/_components/CabinCard";
 
 async function CabinList() {
+  // EXPL: Enables partial pre-rendering when wrapped in suspense component
+  // noStore();
+
   const cabins = await getCabins();
 
   if (!cabins.length) {

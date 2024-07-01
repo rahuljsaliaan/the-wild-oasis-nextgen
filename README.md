@@ -6,6 +6,7 @@
 |-------------|---------------------|----------------------------------------------------------------|
 | `feat:`     | ✨ `:sparkles:`     | Introduce new features.                                        |
 | `feat:`     | ⚗️ `:alembic:`      | Introduce new experimental features.                           |
+| `enhance:`  | 🌟 `:stat:`         | Enhance existing features.                                     |
 | `fix:`      | 🐛 `:bug:`          | Fix a bug.                                                     |
 | `refactor:` | ♻️ `:recycle:`      | Refactor code.                                                 |
 | `chore:`    | 🔧 `:wrench:`       | Perform miscellaneous tasks not altering source or test files. |
