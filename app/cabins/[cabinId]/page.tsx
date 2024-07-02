@@ -1,3 +1,4 @@
+import TextExpander from "@/app/_components/TextExpander";
 import { getCabin, getCabins } from "@/app/_lib/services/data-service";
 import {
   DynamicRouteParam,
@@ -57,7 +58,9 @@ export default async function Page({ params }: CabinPageProps) {
             Cabin {name}
           </h3>
 
-          <p className="text-lg text-primary-300 mb-10">{description}</p>
+          <p className="text-lg text-primary-300 mb-10">
+            <TextExpander>{description || ""}</TextExpander>
+          </p>
 
           <ul className="flex flex-col gap-4 mb-7">
             <li className="flex gap-3 items-center">
@@ -71,7 +74,7 @@ export default async function Page({ params }: CabinPageProps) {
               <MapPinIcon className="h-5 w-5 text-primary-600" />
               <span className="text-lg">
                 Located in the heart of the{" "}
-                <span className="font-bold">Dolomites</span> (Italy)
+                <span className="font-bold">Dolomites</span> (India)
               </span>
             </li>
             <li className="flex gap-3 items-center">
