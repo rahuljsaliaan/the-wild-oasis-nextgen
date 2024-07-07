@@ -1,7 +1,7 @@
 import Image from "next/image";
 import about1 from "@/public/about-1.jpg";
 import about2 from "@/public/about-2.jpg";
-import { getCabinsCount } from "../_lib/services/data-service";
+import { getCabinsCount } from "@/app/_lib/services/data-service";
 
 export const revalidate = 3600;
 

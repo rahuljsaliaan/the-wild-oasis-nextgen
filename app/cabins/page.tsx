@@ -2,6 +2,14 @@ import { Metadata } from "next";
 import CabinList from "@/app/_components/CabinList";
 import { Suspense } from "react";
 import Spinner from "@/app/_components/Spinner";
+import { Capacities, Capacity } from "@/app/_lib/types/enums.types";
+import Filter from "@/app/_components/Filter";
+
+type CabinPageProps = {
+  searchParams?: Partial<{
+    [Capacity.default]: Capacities;
+  }>;
+};
 
 export const revalidate = 3600;
 
@@ -9,7 +17,9 @@ export const metadata: Metadata = {
   title: "Cabins",
 };
 
-export default function Page() {
+export default function Page({ searchParams }: CabinPageProps) {
+  const filter = searchParams?.capacity ?? Capacities.All;
+
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -24,8 +34,12 @@ export default function Page() {
         Welcome to paradise.
       </p>
 
-      <Suspense fallback={<Spinner />}>
-        <CabinList />
+      <div className="flex justify-end mb-8">
+        <Filter />
+      </div>
+
+      <Suspense fallback={<Spinner />} key={filter}>
+        <CabinList filter={filter} />
       </Suspense>
     </div>
   );
